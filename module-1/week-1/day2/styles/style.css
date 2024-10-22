@@ -1,0 +1,40 @@
+/* css for phones first */
+body {
+  background-color: rgb(34, 34, 99);
+  color: aliceblue;
+  text-align: center;
+}
+#image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#image-container img {
+  width: 40%;
+  margin: 10px;
+}
+#heavy-img {
+  display: none;
+}
+
+/* media query for more than 500px  */
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  body {
+    background-color: rgb(32, 77, 21);
+  }
+}
+/* media query for more than 1000px  */
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: rgb(85, 15, 78);
+  }
+  #image-container img {
+    width: 40%;
+  }
+  #image-container {
+    flex-direction: row;
+  }
+  #heavy-img {
+    display: block;
+  }
+}

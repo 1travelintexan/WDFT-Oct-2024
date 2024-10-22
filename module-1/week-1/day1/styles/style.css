@@ -1,0 +1,38 @@
+*{
+    color: white;
+}
+/* this is a comment in css */
+body{
+    background-color: black;
+}
+h1{
+    text-align: center;
+    padding: 250px 0px 0px 0px;
+}
+span{
+    color: aqua;
+    /* background-color: brown; */
+}
+img {
+    height: 50px;
+    margin: 10px;
+    /* position: absolute;
+    top: 265px;
+    left: 200px; */
+}
+
+/* classes */
+.background-image{
+    height: 250px;
+}
+/* ids */
+#image{
+    height: 50px;
+}
+#image-container{
+    background-image: url('../images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    height: 500px;
+}
