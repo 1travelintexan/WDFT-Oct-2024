@@ -1,0 +1,41 @@
+body {
+  background-color: black;
+  color: aliceblue;
+}
+#game-screen {
+  display: none;
+}
+#end-screen {
+  display: none;
+}
+@-moz-keyframes spin {
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  /* animation: spin 1000ms linear ; */
+  color: blue;
+}
+
+#game-screen h1 {
+  width: 200px;
+}
+.surf-image {
+  height: 300px;
+}
+
+li {
+  margin: 20px;
+}
