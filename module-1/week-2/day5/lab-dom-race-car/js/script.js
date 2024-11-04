@@ -25,6 +25,11 @@ window.onload = function () {
     if (event.code === "ArrowDown") {
       myGame.player.directionY = 2;
     }
+    if (event.code === "Space") {
+      const projectileLeft = myGame.player.left + 32;
+      const projectileTop = myGame.player.top - 32;
+      myGame.projectiles.push(new Projectile(projectileLeft, projectileTop));
+    }
   });
   //when you release a key, stop the player from moving
   document.addEventListener("keyup", () => {

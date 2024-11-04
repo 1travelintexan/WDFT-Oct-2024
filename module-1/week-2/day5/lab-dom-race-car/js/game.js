@@ -9,6 +9,7 @@ class Game {
     this.height = 500;
     this.width = 400;
     this.obstacles = [new Obstacle(this.gameScreen)];
+    this.projectiles = [];
     this.score = 0;
     this.lives = 3;
     this.isGameOver = false;
@@ -53,7 +54,7 @@ class Game {
       const didHitMyCar = this.player.didCollide(oneObstacle);
       //if the red car hits my car, based on the didCollide method
       //then we subtract a life, remove the car from the array (splice), and remember to remove from the DOM
-      console.error("did it hit???", didHitMyCar);
+      // console.error("did it hit???", didHitMyCar);
       //conditional checking when there is a collision
       if (didHitMyCar) {
         //subtract a life
@@ -67,6 +68,12 @@ class Game {
         this.obstacles.splice(oneObstacleIndex, 1);
         //remove the red car from the DOM
         oneObstacle.element.remove();
+
+        //add the class spin to the player car
+        this.player.element.classList.add("spin");
+        setTimeout(() => {
+          this.player.element.classList.remove("spin");
+        }, 350);
       }
 
       //check that the red car passes the bottom
@@ -81,6 +88,30 @@ class Game {
         //update the DOM to have the new score
         this.scoreElement.innerText = this.score;
       }
+    });
+
+    //***********Projectiles *************/
+    this.projectiles.forEach((oneProjectile, projectileIndex) => {
+      oneProjectile.move();
+      this.obstacles.forEach((oneObstacle, obstacleIndex) => {
+        //check if the projectile collided with an obstacle
+        if (oneProjectile.didCollide(oneObstacle)) {
+          //splice the projectile out of the array
+          this.projectiles.splice(projectileIndex, 1);
+          //remove the red car from the DOM
+          oneProjectile.element.remove();
+
+          //splice the obstacle out of the array
+          this.obstacles.splice(obstacleIndex, 1);
+          //remove the red car from the DOM
+          oneObstacle.element.remove();
+
+          //increase the score when the red car passes
+          this.score++;
+          //update the DOM to have the new score
+          this.scoreElement.innerText = this.score;
+        }
+      });
     });
   }
   gameOver() {
