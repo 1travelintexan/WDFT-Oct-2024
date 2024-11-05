@@ -26,9 +26,12 @@ window.onload = function () {
       myGame.player.directionY = 2;
     }
     if (event.code === "Space") {
+      //this is shooting the projectile
       const projectileLeft = myGame.player.left + 32;
       const projectileTop = myGame.player.top - 32;
       myGame.projectiles.push(new Projectile(projectileLeft, projectileTop));
+      // this is playing the shoot sound when I press space bar
+      myGame.shoot.play();
     }
   });
   //when you release a key, stop the player from moving
