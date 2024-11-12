@@ -1,0 +1,10 @@
+body {
+  background-color: rgb(86, 86, 85);
+  color: aliceblue;
+  text-align: center;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
