@@ -1,0 +1,43 @@
+body {
+  background-color: #2a2929;
+  color: wheat;
+  padding: 0;
+  margin: 0;
+}
+nav {
+  background-color: rgb(5, 5, 64);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  min-height: 75vh;
+  padding: 20px;
+}
+footer {
+  background-color: rgb(5, 5, 64);
+  height: 15vh;
+}
+h1 {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: aqua;
+  margin: 5px;
+  font-size: 0.7rem;
+}
+.active {
+  text-decoration: underline;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+input {
+  margin: 5px;
+}
