@@ -1,0 +1,155 @@
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Colors */
+:root {
+    --primary-color: #1E40AF;
+    --secondary-color: #3B82F6;
+    --background-color: #F3F4F6;
+    --text-color: #111827;
+}
+
+/* Base styles */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #F3F4F6;
+  color: #111827;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Container */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Styles */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+a {
+  list-style: none;
+  color: black;
+}
+
+button {
+  padding: 5px 10px;
+  min-width: 50px;
+  margin: 5px;
+  font-size: 1.1rem;
+}
+
+label {
+  width: 200px;
+  display: block;
+}
+
+nav {
+  position: relative;
+  z-index: 20;
+}
+
+/* Forms */
+form {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 600px;
+  margin: 1.5rem auto;
+
+  padding: 1.5rem; /* Add some padding to create the card effect */
+  border: 1px solid #ccc; /* Add a border to make it recognizable */
+  border-radius: 0.5rem; /* Rounded corners for the card */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow to the card */  
+}
+
+form span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 10px;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+select,
+input[type="number"] {
+  width: 100%;
+  height: 35px;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  margin-left: -0.1rem;
+}
+
+input[type="checkbox"] {
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+  display: block;
+  transform: scale(1.5)
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin: 2rem;
+  height: 35px;
+}
+
+button[type="submit"] {
+  width: 200px;
+  height: 40px;
+  padding: 0.2rem 1rem;
+  margin-top: 1rem;
+  background-color: #3490dc;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #2779bd;
+}
+
+.Navbar li {
+  list-style: none;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.card {
+  width: 400px;
+  padding: 10px;
+  box-shadow: 0px 2px 3px grey;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background: #94a7c8;
+  border-radius: 4px;
+}
