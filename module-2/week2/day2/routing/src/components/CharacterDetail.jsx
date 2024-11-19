@@ -19,13 +19,13 @@ const CharacterDetail = ({ chars }) => {
         console.log(error);
       }
     };
-    const foundCharacter = chars.find((oneChar) => {
-      if (oneChar.id == characterId) {
-        return true;
-      }
-    });
-    setOneChar(foundCharacter);
-    // getOneSpecificChar();
+    // const foundCharacter = chars.find((oneChar) => {
+    //   if (oneChar.id == characterId) {
+    //     return true;
+    //   }
+    // });
+    // setOneChar(foundCharacter);
+    getOneSpecificChar();
   }, [chars, characterId]);
 
   return (
