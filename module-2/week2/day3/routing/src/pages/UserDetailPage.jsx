@@ -6,6 +6,7 @@ const UserDetailPage = () => {
   const [oneUser, setOneUser] = useState({});
   const { userId } = useParams();
   const navigate = useNavigate();
+
   useEffect(() => {
     //get request with fetch
     // fetch(`https://dummyjson.com/users/${userId}`, { method: "GET" })

@@ -48,12 +48,12 @@ const AddUserPage = () => {
 
     //**************************** */
     //POST request with axios and .then and .catch
-    // axios
-    //   .post("https://dummyjson.com/users/add", newUser)
-    //   .then(({ data }) => {
-    //     console.log(data);
-    //   })
-    //   .catch((err) => console.log(err));
+    axios
+      .post("https://dummyjson.com/users/add", newUser)
+      .then(({ data }) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
     //POST request with axios and async and await
     // try {
     //   const { data } = await axios.post(
