@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Module 2 Project",
+      "description": "This was in the patch request",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Module 3 Project",
+      "description": "Create a full-stack application using MERN stack.",
+      "userId": 1
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "projectId": 1,
+      "description": "Use Vite to create a basic React app"
+    },
+    {
+      "id": 2,
+      "projectId": 1,
+      "description": "This was in the patch request"
+    },
+    {
+      "id": 3,
+      "projectId": 2,
+      "description": "Create a form with 5 input fields"
+    }
+  ]
+}
