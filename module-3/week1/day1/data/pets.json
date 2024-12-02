@@ -1,0 +1,19 @@
+{
+  "pets": [
+    {
+      "name": "Ragnar",
+      "age": 3,
+      "owner": "Joshua"
+    },
+    {
+      "name": "Shashi",
+      "age": 8,
+      "owner": "Eddi"
+    },
+    {
+      "name": "Diego",
+      "age": 6,
+      "owner": "Robert"
+    }
+  ]
+}
