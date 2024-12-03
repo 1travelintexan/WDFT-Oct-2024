@@ -1,0 +1,78 @@
+:root {
+    --primary-color: #3a0dd0; /* Electric Blue */
+    --secondary-color: #2DC5FA; /* Ocean Blue */
+    --gradient-iron: linear-gradient(45deg, rgba(56, 0, 235, 0.5), rgba(45, 197, 250, 0.5));
+    --gradient-hacker: linear-gradient(45deg, rgba(56, 0, 235, 0.5), rgba(154, 22, 240, 0.5));
+
+    --warning-color: #e74c3c;
+    --text-color: #333;
+    --light-text-color: #aaa;
+    --bg-color: #f8f9fa;
+}
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Primary color button styling */
+.primary-color {
+    background-color: var(--primary-color);
+}
+
+.primary-color:hover {
+    background-color: var(--secondary-color);
+}
+
+
+/* Navbar Styles */
+nav.bg-white {
+    background-color: var(--primary-color);
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
+/* Buttons */
+a.bg-blue-500,
+button.bg-blue-500 {
+    background-color: var(--primary-color);
+}
+
+a.bg-blue-500:hover,
+button.bg-blue-500:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Tags */
+.tag {
+    background-color: #4265E6;
+}
+
+
+/* Gradients */
+.gradient-iron {
+    background: var(--gradient-iron);
+}
+
+.gradient-hacker {
+    background: var(--gradient-hacker);
+}
+
+.gradient-footer {
+    background: linear-gradient(90deg, rgba(56, 0, 235, 0.95), rgba(10, 10, 30, 0.95));
+}
+
+/* Error Messages */
+.fas.fa-exclamation-triangle {
+    color: var(--warning-color);
+}
+
+#projectsContainer,
+#articlesContainer,
+#errorContainer {
+    min-height: 100vh;
+}

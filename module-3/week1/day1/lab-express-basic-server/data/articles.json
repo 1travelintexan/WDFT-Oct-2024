@@ -1,0 +1,34 @@
+[
+  {
+    "title": "The best article ever",
+    "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    "author": "Jane Doe",
+    "publishedAt": "2022-01-08",
+    "tags": ["react", "node", "testing", "react testing library"],
+    "views": 16
+  },
+  {
+    "title": "The second best article ever",
+    "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    "author": "Jane Doe",
+    "publishedAt": "2022-03-24",
+    "tags": ["javascript", "node", "express"],
+    "views": 234
+  },
+  {
+    "title": "The third best article ever",
+    "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    "author": "Jane Doe",
+    "publishedAt": "2022-05-14",
+    "tags": ["javascript", "css", "tailwind"],
+    "views": 345
+  },
+  {
+    "title":"The fourth best article ever",
+    "body": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+    "author": "Jane Doe",
+    "publishedAt": "2023-02-02",
+    "tags": ["javascript", "css", "testing", "jasmine"],
+    "views": 128
+  }
+]

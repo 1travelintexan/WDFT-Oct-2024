@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 Not Found</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow text-white gradient-iron">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+          <a href="/" class="hover:text-blue-500">
+            <div class="text-xl font-bold">My Portfolio</div>
+          </a>
+          <ul class="flex space-x-4">
+            <li><a href="/blog" class="hover:text-blue-500">Blog</a></li>
+            <li>
+              <a
+                href="https://www.linkedin.com/school/ironhack"
+                class="hover:text-blue-500"
+                >LinkedIn</a
+              >
+            </li>
+            <li>
+              <a href="https://github.com" class="hover:text-blue-500"
+                >GitHub</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 404 content -->
+    <div id="errorContainer" class="container mx-auto mt-20 px-4 text-center">
+      <i class="fas fa-exclamation-triangle text-red-500 text-9xl mb-8"></i>
+      <h1 class="text-6xl font-bold mb-4">404</h1>
+      <p class="text-2xl mb-6">Oops! Page not found.</p>
+      <a
+        href="/"
+        class="primary-color hover:bg-blue-600 text-white py-2 px-6 rounded"
+        >Go Home</a
+      >
+    </div>
+
+    <!-- Footer -->
+    <footer class="gradient-footer bg-gray-800 text-white py-4 mt-10">
+      <div class="container mx-auto text-center">
+        <p class="text-xl font-medium">LAB | Express Basic Server</p>
+        <p class="mt-2 opacity-70 text-sm">© 2023 Ironhack</p>
+      </div>
+    </footer>
+  </body>
+</html>
