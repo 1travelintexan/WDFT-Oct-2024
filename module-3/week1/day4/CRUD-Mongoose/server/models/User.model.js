@@ -16,7 +16,7 @@ const userSchema = new Schema(
     },
     username: {
       type: String,
-      required: [true, "Name is required."],
+      required: [true, "username is required."],
     },
     toys: [
       {

@@ -7,6 +7,7 @@ const { isAuthenticated } = require("../middlewares/jwt.middleware");
 router.post("/signup", async (req, res, next) => {
   //destructur the req.body to get the keys from the object
   const { username, email, password } = req.body;
+  console.log("made it to the signup route", req.body);
   try {
     //look in the DB for the email and if it exists throw error
     const emailAlreadyTaken = await UserModel.findOne({ email });
@@ -62,10 +63,12 @@ router.post("/login", async (req, res) => {
       } else {
         return res
           .status(500)
-          .json({ message: "invalid password credentials" });
+          .json({ errorMessage: "invalid password credentials" });
       }
     } else {
-      return res.status(500).json({ message: "invalid email credentials" });
+      return res
+        .status(500)
+        .json({ errorMessage: "invalid email credentials" });
     }
   } catch (error) {
     console.log(error);
@@ -102,10 +105,12 @@ router.delete("/delete/:userId", async (req, res) => {
 //get one specific user
 router.get("/user/:userId", async (req, res) => {
   try {
-    const oneUser = await UserModel.findById(req.params.userId).populate(
-      "toys"
-    );
-    res.status(200).json({ message: "found the user", oneUser });
+    const oneUser = await UserModel.findById(req.params.userId)
+      .populate("toys")
+      //.lean makes the document from the DB modifiable
+      .lean();
+    const currentUser = { ...oneUser, password: "not today" };
+    res.status(200).json({ message: "found the user", currentUser });
   } catch (error) {
     console.log(error);
     res.status(500).json({ errorMessage: "error on finding one user" });

@@ -11,10 +11,10 @@ function isAuthenticated(req, res, next) {
       req.headers.authorization.split(" ")[1]
     ) {
       const theToken = req.headers.authorization.split(" ")[1];
-      const payLoad = jwt.verify(theToken, process.env.TOKEN_SECRET);
-      console.log("here is the payload", payLoad);
+      const currentUser = jwt.verify(theToken, process.env.TOKEN_SECRET);
+      console.log("here is the payload", currentUser);
       //create a property on the request that is name vurrentUser that has our information
-      req.payload = { currentUser: payLoad };
+      req.payload = { currentUser };
       //after attaching the payload to the request, call the next method to pass to the next function
       next();
     } else {
