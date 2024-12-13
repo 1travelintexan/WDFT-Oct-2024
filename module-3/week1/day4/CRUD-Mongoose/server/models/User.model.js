@@ -24,6 +24,7 @@ const userSchema = new Schema(
         ref: "toy",
       },
     ],
+    profileImage: String,
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

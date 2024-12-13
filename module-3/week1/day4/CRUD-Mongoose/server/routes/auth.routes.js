@@ -3,6 +3,63 @@ const UserModel = require("../models/User.model");
 const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { isAuthenticated } = require("../middlewares/jwt.middleware");
+const cloudinary = require("cloudinary").v2;
+//cloudinary stuff
+const uploader = require("../middlewares/cloudinary.config");
+const uploaderOfMultiple = require("../middlewares/multipleCloudinary.config");
+
+router.post(
+  "/multiple-uploads",
+  uploaderOfMultiple.array("imageUrl"),
+  async (req, res) => {
+    //the images after the uploader will be in the request . files
+    const images = req.files;
+    // create an array to push the urls into after we add them to the cloud
+    const imageUrls = [];
+    //for in loop to loop over the object of images
+    for (const image of images) {
+      // await the uploader.upload from cloudinary to get the  secure url
+      const result = await cloudinary.uploader.upload(image.path, {
+        resource_type: "auto",
+      });
+      //push into the array the secure url on each iteration
+      imageUrls.push(result.secure_url);
+    }
+    if (!imageUrls.length) {
+      console.log("there is no file");
+      res.status(403).json({ message: "there is no file" });
+    } else {
+      console.log("there were images, ", imageUrls);
+
+      //update whatever model
+      res
+        .status(200)
+        .json({ message: "Multiple images uploaded successfully!", imageUrls });
+    }
+  }
+);
+
+//upload one image route
+router.post(
+  "/upload/:userId",
+  uploader.single("imageUrl"),
+  async (req, res, next) => {
+    // the uploader.single() callback will send the file to cloudinary and get you and obj with the url in return
+    console.log("file is: ", req.file, "user id", req.params.userId);
+
+    if (!req.file) {
+      console.log("there was an error uploading the file");
+      next(new Error("No file uploaded!"));
+      return;
+    } else {
+      const updatedUser = await UserModel.findByIdAndUpdate(req.params.userId, {
+        profileImage: req.file.path,
+      });
+      console.log("user updated nicely", updatedUser);
+      res.status(200).json(updatedUser);
+    }
+  }
+);
 // signup is just creating a user (with the password encrypted)
 router.post("/signup", async (req, res, next) => {
   //destructur the req.body to get the keys from the object
@@ -119,7 +176,7 @@ router.get("/user/:userId", async (req, res) => {
 
 //verify route to check the JWT token
 router.get("/verify", isAuthenticated, (req, res) => {
-  console.log("made it to the /verify route", req.payload);
+  // console.log("made it to the /verify route", req.payload);
   res
     .status(200)
     .json({ message: "user verified", currentUser: req.payload.currentUser });

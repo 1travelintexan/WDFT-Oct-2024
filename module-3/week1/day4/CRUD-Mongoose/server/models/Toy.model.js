@@ -10,6 +10,7 @@ const toySchema = new Schema({
     enum: ["dog", "cat", "bird", "fish", "other"],
     required: true,
   },
+  images: [String],
 });
 
 const ToyModel = model("toy", toySchema);
