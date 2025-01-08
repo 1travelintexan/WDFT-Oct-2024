@@ -1,7 +1,7 @@
 const people = ["Malek", "Joshua", "Bruno", "Stephan"];
 const numbers = [1, 3, 4, 5, 77];
 //*******generics **********/
-function getRandom<T>(arr: T[]): T {
+function getRandom<T>(arr: T[]) {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
 }
